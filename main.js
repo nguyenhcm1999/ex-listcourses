@@ -7,7 +7,16 @@ function start(){
 }
 
 start()
-
+function testget(){
+    fetch(coursesApi) // trả về 1 promise
+    .then(function(response){ // response chính là 1 promise
+        console.log(response)
+        return response.json() //thằng respone.json() lại trả về 1 promise 
+    })
+    .then(function(data){console.log(data)})
+}
+testget()
+console.log(fetch(coursesApi))
 //1
 function getCourses(callback){
     fetch(coursesApi)
